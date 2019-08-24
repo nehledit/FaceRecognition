@@ -56,9 +56,9 @@ python recognize_faces_image.py --encodings encodings.pickle --image examples/ex
 # if you want to use predefined path than define the path in a variable
 
 args = {
-	"shape_predictor": "complete_path/shape_predictor_68_face_landmarks.dat",
-	"image": "complete_path/input_image.jpg",
-        "encodings": "complete_path/encodings.pickle",
+	"shape_predictor": r'Path_to_predictor folder\shape_predictor_68_face_landmarks.dat',
+	"image":r'Path_to_image_folder\examples\1.jpg',
+        "encodings": r'path to encodings folder\encodings\encodings.pickle',
         "detection_method": "cnn"
 
 }
@@ -70,7 +70,7 @@ face = FaceAligner(predictor, desiredFaceWidth=256)
 
 # Load input image, resize and convert it to grayscale
 image = cv2.imread(args["image"])
-image = imutils.resize(image, width=500)
+image=imutils.resize(image, width=500)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # detect faces in the grayscale image
